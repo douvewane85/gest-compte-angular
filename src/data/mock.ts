@@ -1,4 +1,6 @@
-const COMPTES=[
+import { Compte } from "../app/models/compte.model";
+
+const COMPTES:Compte[]=[
 {
     id:1,
     mumero:"FR76 1234 5678 9012 3456 7890 123",
@@ -15,13 +17,13 @@ const COMPTES=[
     titulaire:"Bob Martin",
     type:"Épargne",
     createAt:new Date('2022-11-20'),
-     statut:"Actif"
+    statut:"Bloque",
+    duree:"10"
 },
 {
     id:3,
     mumero:"FR12 3456 7890 1234 5678 9012 345",
     solde:500.50,
-    devise:"EUR",
     titulaire:"Claire Bernard", 
     type:"Courant",
     createAt:new Date('2023-03-10'),
