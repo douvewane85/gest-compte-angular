@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CompteService } from '../compte.service';
 import { DatePipe, NgClass } from '@angular/common';
 import { ComptePaginate } from '../../models/compte.model';
@@ -11,12 +11,22 @@ import { ComptePaginate } from '../../models/compte.model';
   templateUrl: './compte-list.component.html',
   styleUrl: './compte-list.component.css'
 })
-export class CompteListComponent {
+export class CompteListComponent implements OnInit {
  //comptes=this.compteService.getComptes();
-   dataPaginate:ComptePaginate=this.compteService.getComptesPagines(1);
-  //injection de dépendance
-  constructor(private compteService: CompteService) { 
+   //dataPaginate:ComptePaginate|null=null;
+    dataPaginate?:ComptePaginate // dataPaginate:ComptePaginate|undefined=undefined; 
+
+   // dataPaginate!:ComptePaginate
+   //injection de dépendance
+  constructor(private compteService: CompteService,private route:ActivatedRoute) { 
 
   } 
+  ngOnInit(): void {
+     this.route.queryParamMap.subscribe(qp=>{
+       let page =Number(qp.get("page")||1)
+        this.dataPaginate=this.compteService.getComptesPagines(page);
+     })
+     
+  }
 
 }

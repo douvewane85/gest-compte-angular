@@ -1,12 +1,15 @@
+import { HistoriqueTransactionReadOnly, InfosCompteReadOnly, StatistiqueTransactionReadOnly } from "./transaction.model";
+
 export interface Compte {
-    id:number;
-    mumero:string;
-    solde:number;
-    titulaire:string;
-    type:string;
-    createAt:Date;
-    statut:string;
-    duree?:string;
+     id:number;
+     mumero:string;
+     solde:number;
+     titulaire:string;
+     type:string;
+     createAt:Date;
+     statut:string;
+     duree?:string;
+  
 }
 
 export interface ComptePaginate {
@@ -16,3 +19,4 @@ export interface ComptePaginate {
     totalPages:number;
     pages:number[];
 }
+

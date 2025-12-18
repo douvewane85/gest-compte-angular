@@ -1,4 +1,5 @@
 import { Compte } from "../app/models/compte.model";
+import { TransactionResponse } from "../app/models/transaction.model";
 
 const COMPTES:Compte[]=[
 {
@@ -48,4 +49,106 @@ const COMPTES:Compte[]=[
      statut:"Actif"
 }                            
 ];
-export { COMPTES };
+
+const TRANSACTIONS: TransactionResponse[]=[
+    {
+        historique:[
+            {
+                id:5,
+                mumero:"FR56 5678 9012 ",
+                montant:750.25,   
+                soldeApres:10000,
+                description:"xxxxx",
+                type:"DEPOT",
+                createAt:new Date('2022-05-18'),
+            
+           },
+           {
+                id:5,
+                mumero:"FR56 5678 9012 ",
+                montant:750.25,   
+                soldeApres:10000,
+                description:"xxxxx",
+                type:"DEPOT",
+                createAt:new Date('2022-05-18'),
+            
+           },
+           {
+                id:5,
+                mumero:"FR56 5678 9012 ",
+                montant:750.25,   
+                soldeApres:10000,
+                description:"xxxxx",
+                type:"DEPOT",
+                createAt:new Date('2022-05-18'),
+            
+           }
+        ],
+        infosCompte:{
+            id:5,
+            mumero:"FR76 1234 5678 9012",
+            solde:750.25,   
+            titulaire:"Eva Moreau",
+            type:"Courant",
+            createAt:new Date('2022-05-18'),
+            statut:"Actif"
+        },
+        statistique:{
+             totalRetrait:10000,
+             totalDepot:1000,
+             nbreTransaction:100,
+             dateDerniereTransaction:new Date('2022-05-18')
+        }
+    },
+     {
+        historique:[
+            {
+                id:5,
+                mumero:"FR56 5678 9012 3456 7890 1234 567",
+                montant:750.25,   
+                soldeApres:10000,
+                description:"xxxxx",
+                type:"DEPOT",
+                createAt:new Date('2022-05-18'),
+            
+           },
+           {
+                id:5,
+                mumero:"FR56 5678 9012 3456 7890 1234 567",
+                montant:750.25,   
+                soldeApres:10000,
+                description:"xxxxx",
+                type:"RETRAIT",
+                createAt:new Date('2022-05-18'),
+            
+           },
+           {
+                id:5,
+                mumero:"FR56 5678 9012 3456 7890 1234 567",
+                montant:750.25,   
+                soldeApres:10000,
+                description:"xxxxx",
+                type:"DEPOT",
+                createAt:new Date('2022-05-18'),
+            
+           }
+        ],
+        infosCompte:{
+            id:2,
+            mumero:"FR98 2345 6789 0123 4567 8901 234",
+            solde:750.25,   
+            titulaire:"Eva Moreau",
+            type:"Courant",
+            createAt:new Date('2022-05-18'),
+            statut:"Actif"
+        },
+        statistique:{
+             totalRetrait:10000,
+             totalDepot:1000,
+             nbreTransaction:100,
+             dateDerniereTransaction:new Date('2022-05-18')
+        }
+    }
+]
+
+export { COMPTES,TRANSACTIONS };
