@@ -27,5 +27,6 @@ export class CompteService {
       pages:Array.from({length:totalPages},(_,i)=>i+1)
     };
   }
+}
 
 
